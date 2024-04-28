@@ -3,7 +3,7 @@ import { useWeatherContext } from '../../context/weather';
 
 
 const useGetCurrentLocation = () => {
-  const [cityName, setCityName] = useState<string>("bareilly");
+  const [cityName, setCityName] = useState<string | null>(null);
   const { searchWeather } = useWeatherContext();
 
   const getLocation = () => {
