@@ -1,5 +1,5 @@
 
-# Waether App
+# Weather App
 
 This Weather Dashboard Application is built using React, providing users with up-to-date weather information for cities around the world. It offers a seamless experience with a sleek design that is responsive across various devices, including desktop and mobile.
 
