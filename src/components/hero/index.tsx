@@ -4,6 +4,7 @@ import { useWeatherContext } from "../../context/weather";
 
 const Index = () => {
   const {data} = useWeatherContext();
+  console.log(data?.current?.is_day)
 
   return (
     <div className="flex justify-around">
@@ -17,7 +18,11 @@ const Index = () => {
         <span className="text-5xl max-sm:text-2xl text-white font-semibold" >{data?.current.temp_c}°C|°F</span>
       </div>
       <div className="flex items-center justify-center" >
-        <img src={data? data?.current?.is_day === 1? dayIcon : nightIcon : dayIcon} className="w-[200px] max-sm:w-[80px] image-with-white-background" alt="day or night icon" />
+        { data?
+          <img src={data?.current?.is_day === 1? dayIcon : nightIcon} className="w-[200px] max-sm:w-[80px] image-with-white-background" alt="day or night icon" />
+          :
+          <img src={dayIcon} className="w-[200px] max-sm:w-[80px] image-with-white-background" alt="day or night icon" />
+        }
       </div>
     </div>
   );
