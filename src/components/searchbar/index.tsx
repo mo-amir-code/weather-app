@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useWeatherContext } from "../../context/weather"
 import useGetCurrentLocation from "../customhooks/useGetCurrentLocation";
 
@@ -9,14 +9,17 @@ const Index = () => {
   const cityName = useGetCurrentLocation()
 
 
-  const handleSearch = () => {
+  const handleSearch = useCallback(() => {
     searchWeather({city});
-  }
+  }, [searchWeather, city])
 
   const handleOnChange = (value:string) => setCity(value);
 
   useEffect(() => {
-    if(cityName) setCity(cityName);
+    if(cityName){
+      setCity(cityName);
+      if(cityName === "bareilly") handleSearch()
+    }
   }, [cityName]);
 
   return (

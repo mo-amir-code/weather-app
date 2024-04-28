@@ -64,7 +64,7 @@ const WeatherContextProvider = ({children}:{children: ReactNode}) => {
     const searchWeather = async ({city}:{city: string}) => {
         try {
             setIsLoading(true);
-            const res = await fetch(`http://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_WEATHER_API}&q=${city}&aqi=yes`)
+            const res = await fetch(`https://api.weatherapi.com/v1/current.json?key=${import.meta.env.VITE_WEATHER_API}&q=${city}&aqi=yes`)
             const data = await res.json();
             setData(data)
             setIsLoading(false);
