@@ -5,7 +5,7 @@ import useGetCurrentLocation from "../customhooks/useGetCurrentLocation";
 
 const Index = () => {
   const { searchWeather } = useWeatherContext();
-  const [city, setCity] = useState<string>("bareilly");
+  const [city, setCity] = useState<string>("");
   const cityName = useGetCurrentLocation()
 
 
