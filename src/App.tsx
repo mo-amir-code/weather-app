@@ -8,6 +8,8 @@ import Empty from "./components/Empty";
 function App() {
   const { isLoading, data } = useWeatherContext();
 
+  // Update for Jenkins test
+
   return (
     <div className="w-full bg-primary-color min-h-screen">
       <main className="w-full space-y-8 font-poppins p-4 mx-auto max-w-7xl overflow-hidden">
