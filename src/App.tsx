@@ -9,6 +9,7 @@ function App() {
   const { isLoading, data } = useWeatherContext();
 
   // Update for Jenkins test
+  // Update for Jenkins test 2
 
   return (
     <div className="w-full bg-primary-color min-h-screen">
